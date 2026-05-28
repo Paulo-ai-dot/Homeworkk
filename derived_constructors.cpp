@@ -33,7 +33,13 @@ public:
 
 int main() {
     Derived *ptr1 = new Derived(2);
+    cout << "ptr1 -> Base_num: " << ptr1->Base_num << ", Derived_num: " << ptr1->Derived_num << endl;
+
     Derived *ptr2 = new Derived(1, 2);
+    cout << "ptr2 -> Base_num: " << ptr2->Base_num << ", Derived_num: " << ptr2->Derived_num << endl;
+
+    delete ptr1;
+    delete ptr2;
 
     return 0;
 }
