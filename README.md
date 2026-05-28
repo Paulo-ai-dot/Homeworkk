@@ -1,38 +1,34 @@
-# Multiple Inheritance Example in C++
+# Homeworkk Repository
 
-## Overview
-This C++ program demonstrates multiple and virtual inheritance to address the diamond problem. It shows how the `Final` class can inherit from two intermediate classes (`Midl` and `Mid2`) that both virtually inherit from a common base (`Base`). This avoids redundant copies of the base class properties.
+This repository contains C++ code showcasing the concepts of multiple inheritance, constructors, and method overriding. The main focus of the code is to demonstrate inheritance using two base classes, `Midl` and `Mid2`, and a derived class `Final`.
 
-## Explanation of the Code
+## Code Explanation
 
-### Base Class
-- Contains:
-  - `int number`: An integer to hold a value.
-  - Constructor: Initializes `number`.
-  - `void Base_function()`: Prints the content of `number`.
+### Description 1: Initialization of Base Classes
+The classes `Midl` and `Mid2` are initialized with integer values using parameterized constructors. The `Final` class, which inherits from both, explicitly calls these constructors in its initialization list.
 
-### `Midl` and `Mid2`
-- Both classes virtually inherit from `Base`.
-- Use the `Base` constructor for initialization, reducing ambiguity.
+### Description 2: Multiple Inheritance
+The `Final` class successfully inherits methods from both `Midl` and `Mid2`. This allows the derived class to use functionalities from both base classes without conflict.
 
-### `Final` Class
-- Inherits from both `Midl` and `Mid2`.
-- The constructor initializes `Base` to ensure it is only constructed once, resolving the diamond problem.
+## Code Output Examples
 
-### Code Workflow
-1. The `Base` constructor is called using virtual inheritance, so only one instance of `Base` exists despite multiple inheritances.
-2. An object of the `Final` class is created (`Final f(1)`).
-3. Function `Base_function()` is accessible directly via the `Final` class object and is called.
-
-## Output
-When the program is executed, it produces the following output:
+### Output Example 1:
+When the code is executed, the following output is produced:
 ```
-Base number is 1
+Midl number is 1
+Mid2 number is 2
 ```
 
-## Compilation and Execution
-To compile and run the program, use the following commands:
-```bash
-g++ -o main example_virtual_inheritance.cpp
-./main
+### Output Example 2:
+If the `Final` object is initialized as `Final f(5, 10);`, the output will change to:
 ```
+Midl number is 5
+Mid2 number is 10
+```
+
+## Usage
+- Compile and run the code using a C++ compiler to observe inheritance and constructor initialization.
+- Modify the constructor values of `Final` to test how values propagate to the base classes.
+
+---
+Feel free to explore, modify, and expand the code to experiment with C++ object-oriented principles.
